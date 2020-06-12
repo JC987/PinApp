@@ -1,5 +1,6 @@
 package com.example.pinapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,10 +27,7 @@ public class FirstFragment extends Fragment {
         final View root =  inflater.inflate(R.layout.fragment_first, container, false);
         listView = root.findViewById(R.id.listView);
         Button firstButton = root.findViewById(R.id.button_first);
-       ;
-
-        PinList.addList("Q");
-        PinList.addList("E");
+       
 
         ArrayAdapter a = new ArrayAdapter<String>(root.getContext(), R.layout.support_simple_spinner_dropdown_item, PinList.getList());
         listView.setAdapter(a);
@@ -43,6 +41,11 @@ public class FirstFragment extends Fragment {
                 bnd.putString("string_key",listView.getItemAtPosition(i).toString() + " was pressed!");
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment,bnd);
+
+                Intent intent = new Intent(root.getContext(), MapsActivity.class);
+
+                startActivity(intent);
+
             }
         });
 
