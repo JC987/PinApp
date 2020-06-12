@@ -43,13 +43,13 @@ private GoogleMap map;
 
         // Add a marker in Sydney and move the camera
         LatLng bhs = new LatLng(40.771589, -73.781208);
-        LatLng bt = new LatLng(40.779169, -73.777737);
-        LatLng bt2 = new LatLng(40.779169, -73.777777);
+        LatLng car = new LatLng(40.779169, -73.777737);
+        LatLng applebees = new LatLng(40.779169, -73.776500);
         map.addMarker(new MarkerOptions().position(bhs).title("Marker at BHS"));
-        map.addMarker(new MarkerOptions().position(bt).title("Marker at Bay Terrarace"));
-        map.addMarker(new MarkerOptions().position(bt2).title("Marker at Bay Terrarace 2"));
+        map.addMarker(new MarkerOptions().position(car).title("Marker at Bay Terrace"));
+        map.addMarker(new MarkerOptions().position(applebees).title("Marker at Bay Applebees"));
 
-        CameraUpdate pinLocation = CameraUpdateFactory.newLatLng(bt2);
+        CameraUpdate pinLocation = CameraUpdateFactory.newLatLng(applebees);
         CameraUpdate zoom = CameraUpdateFactory.zoomTo(18);
 
         map.moveCamera(pinLocation);
