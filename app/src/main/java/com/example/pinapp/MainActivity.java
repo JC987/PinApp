@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         //listView.setAdapter(a);
 
-        final ArrayAdapter a = new ArrayAdapter<String>(MainActivity.this, R.layout.support_simple_spinner_dropdown_item, list);
+        final ArrayAdapter a = new ArrayAdapter<String>(MainActivity.this, R.layout.list_item, list);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,14 +52,14 @@ public class MainActivity extends AppCompatActivity {
         View view = View.inflate(this,R.layout.dialog_list_item_name,null);
         final EditText et = view.findViewById(R.id.etListItemName);
         dialog.setView(view);
-        dialog.setTitle("Enter name!");
+        dialog.setTitle("Enter new pin name!");
         dialog.setPositiveButton("Add", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(MainActivity.this,"Add pressed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"New Pin Added", Toast.LENGTH_SHORT).show();
                 ListView listView = findViewById(R.id.listView);
                 list.add(et.getText().toString());
-                ArrayAdapter a = new ArrayAdapter<String>(MainActivity.this, R.layout.support_simple_spinner_dropdown_item, list);
+                ArrayAdapter a = new ArrayAdapter<String>(MainActivity.this, R.layout.list_item, list);
 
                 listView.setAdapter(a);
                 //addToList(et.getText().toString());

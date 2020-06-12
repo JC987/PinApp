@@ -26,12 +26,9 @@ public class FirstFragment extends Fragment {
         final View root =  inflater.inflate(R.layout.fragment_first, container, false);
         listView = root.findViewById(R.id.listView);
         Button firstButton = root.findViewById(R.id.button_first);
-       ;
 
-        PinList.addList("Q");
-        PinList.addList("E");
 
-        ArrayAdapter a = new ArrayAdapter<String>(root.getContext(), R.layout.support_simple_spinner_dropdown_item, PinList.getList());
+        ArrayAdapter a = new ArrayAdapter<String>(root.getContext(), R.layout.list_item, PinList.getList());
         listView.setAdapter(a);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
