@@ -1,5 +1,6 @@
 package com.example.pinapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,11 +36,16 @@ public class FirstFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(root.getContext(),"hello " + listView.getItemAtPosition(i).toString(),Toast.LENGTH_LONG).show();
-
+                /*
                 Bundle bnd = new Bundle();
                 bnd.putString("string_key",listView.getItemAtPosition(i).toString() + " was pressed!");
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment,bnd);
+                */
+                Intent intent = new Intent(root.getContext(), MapsActivity.class);
+
+                startActivity(intent);
+
             }
         });
 
