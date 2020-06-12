@@ -31,11 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-
-        //listView = findViewById(R.id.listView);
-
-        //listView.setAdapter(a);
-
         final ArrayAdapter a = new ArrayAdapter<String>(MainActivity.this, R.layout.list_item, list);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -59,9 +54,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"New Pin Added", Toast.LENGTH_SHORT).show();
                 ListView listView = findViewById(R.id.listView);
                 list.add(et.getText().toString());
-                ArrayAdapter a = new ArrayAdapter<String>(MainActivity.this, R.layout.list_item, list);
+                if(listView != null) {
+                    ArrayAdapter a = new ArrayAdapter<String>(MainActivity.this, R.layout.list_item, list);
 
-                listView.setAdapter(a);
+                    listView.setAdapter(a);
+                }
                 //addToList(et.getText().toString());
             }
         });

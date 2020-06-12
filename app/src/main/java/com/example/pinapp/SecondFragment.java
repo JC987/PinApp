@@ -22,7 +22,6 @@ public class SecondFragment extends Fragment implements OnMapReadyCallback {
 private View root;
 private MapView mapView;
 private GoogleMap map;
-private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
     @Override
     public View onCreateView(
@@ -35,7 +34,6 @@ private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
-        // Inflate the layout for this fragment
         return root;
     }
 
@@ -58,24 +56,24 @@ private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
         map.animateCamera(zoom);
     }
 
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mapView.onResume();
-    }
-
     @Override
     public void onStart() {
-        super.onStart();
         mapView.onStart();
+        super.onStart();
     }
 
     @Override
     public void onStop() {
-        super.onStop();
         mapView.onStop();
+        super.onStop();
     }
+
+    @Override
+    public void onResume() {
+        mapView.onResume();
+        super.onResume();
+    }
+
     @Override
     public void onPause() {
         mapView.onPause();
@@ -88,7 +86,7 @@ private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
     }
     @Override
     public void onLowMemory() {
-        super.onLowMemory();
         mapView.onLowMemory();
+        super.onLowMemory();
     }
 }
